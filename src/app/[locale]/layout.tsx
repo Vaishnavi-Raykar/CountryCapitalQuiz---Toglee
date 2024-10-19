@@ -25,9 +25,9 @@ export default async function LocaleLayout({
       <body>
         <TolgeeNextProvider locale={locale} locales={locales}>
           {children}
-          <footer className="fixed bottom-0 left-0 right-0 bg-tranparent text-white py-4 text-center">
+          {/* <footer className="fixed bottom-0 left-0 right-0 bg-tranparent text-white py-4 text-center">
             <p>Made by <a href="https://github.com/Vaishnavi-Raykar" target='blank' className='text-blue-400'>Vaishnavi Raykar</a></p>
-          </footer>
+          </footer> */}
         </TolgeeNextProvider>
       </body>
     </html>

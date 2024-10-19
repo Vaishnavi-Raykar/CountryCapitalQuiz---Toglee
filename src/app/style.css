@@ -26,7 +26,7 @@ body {
     margin: 0 5em;
   }
   
-  .option {
+  /* .option {
     appearance: button;
     border: none;
     border-radius: 2.5%;
@@ -34,6 +34,24 @@ body {
     color: #fff;
     padding: 1em;
     width: 100%;
+  } */
+  
+
+  .option {
+    width : full;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.5rem ; /* p-4 in Tailwind (1rem = 16px padding) */
+    background-color: #374151; /* bg-gray-700 in Tailwind */
+    text-align: left; /* text-left in Tailwind */
+    color: #fff; /* text-white in Tailwind */
+    border-radius: 0.5rem; /* rounded-lg in Tailwind (0.5rem = 8px border-radius) */
+    transition: background-color 0.2s ease-in-out; /* transition duration-200 */
+  }
+
+  .option:hover {
+    background-color: #7c3aed; /* hover:bg-purple-600 in Tailwind */
   }
   
   .correct-answer {
@@ -51,7 +69,7 @@ body {
   
   @media screen and (min-width: 1100px) {
     .option {
-      padding: 2em;
+      padding: 1.75rem;
     }
   }
   

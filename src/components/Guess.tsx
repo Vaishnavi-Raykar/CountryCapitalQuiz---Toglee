@@ -16,7 +16,7 @@ const Guess: React.FC<GuessInterface> = ({
   const { t } = useTranslate();
 
   return (
-    <button className='option' disabled={disableGuess} onClick={() => handleAnswer(t('capital'))}>
+    <button className='option' disabled={disableGuess} onClick={() => handleAnswer(capital)}>
       {/* {t('capital')} */}
       {capital}
     </button>
