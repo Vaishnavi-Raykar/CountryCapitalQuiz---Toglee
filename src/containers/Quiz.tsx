@@ -1,105 +1,6 @@
-// import React, { useState } from 'react';
-
-// import Guess from '../components/Guess';
-// import { OptionsInterface } from '../app/[locale]/App';
-// import { useTranslate } from '@tolgee/react';
-
-// interface CountryInterface {
-//   name: string;
-//   capital: string;
-// }
-// interface QuizInterface {
-//   options: CountryInterface[];
-//   handleOptions: React.Dispatch<React.SetStateAction<OptionsInterface[]>>;
-//   currentCountry: CountryInterface;
-//   handleCountry: React.Dispatch<React.SetStateAction<void>>;
-//   score: number;
-//   handleCorrectCount: React.Dispatch<React.SetStateAction<number>>;
-// }
-
-// const Quiz: React.FC<QuizInterface> = ({
-//   options,
-//   handleOptions,
-//   currentCountry,
-//   handleCountry,
-//   score,
-//   handleCorrectCount,
-// }) => {
-//   const [correctText, setCorrectText] = useState(false);
-//   const [incorrectText, setIncorrectText] = useState(false);
-//   const [questionNumber, setQuestionNumber] = useState(1);
-//   const [disableGuess, setDisableGuess] = useState(false);
-
-//   const checkAnswer = (capital: string) => {
-//     if (capital === currentCountry.capital) {
-//       setCorrectText(true);
-//       handleCorrectCount((count) => count + 1);
-//       setDisableGuess(true);
-//     } else {
-//       setIncorrectText(true);
-//       setDisableGuess(true);
-//     }
-//     setTimeout(() => {
-//       setCorrectText(false);
-//       setIncorrectText(false);
-//       setDisableGuess(false);
-//       setQuestionNumber((count) => count + 1);
-//       handleCountry();
-//       handleOptions([]);
-//     }, 2000);
-//   };
-
-//   const { t } = useTranslate();
-
-//   return (
-//     <div className="quiz">
-//       <h2>{t('guess')} {currentCountry.name} ?</h2>
-//       <p>{t('question')} {questionNumber} / 10</p>
-//       <div className="options">
-//         {options.map(
-//           (option: { name: string; capital: string }, index: number) => (
-//             <Guess
-//               key={index}
-//               capital={option.capital}
-//               handleAnswer={checkAnswer}
-//               disableGuess={disableGuess}
-//             />
-//           )
-//         )}
-//       </div>
-//       <p
-//         style={{
-//           color: '#2cbf2c',
-//           visibility: !correctText ? 'hidden' : 'visible',
-//         }}
-//       >
-//         {t('correct')}
-//       </p>
-//       <p
-//         style={{
-//           color: '#f00',
-//           visibility: !incorrectText ? 'hidden' : 'visible',
-//         }}
-//       >
-//         {t('incorrect')}
-//       </p>
-//       <p style={{ visibility: !incorrectText ? 'hidden' : 'visible' }}>
-//       {t('correct-ans')} {currentCountry.capital}
-//       </p>
-//       <p>
-//       {t('your-score')} {' '}
-//         <span style={{ color: score >= 7 ? '#0f0' : '#f00' }}>{score}</span>
-//       </p>
-//     </div>
-//   );
-// };
-
-// export default Quiz;
-
-
 import React, { useState } from 'react';
-import Guess from '../components/Guess';
-import { OptionsInterface } from '../app/[locale]/App';
+import Guess from '@/components/Guess';
+import { OptionsInterface } from '@/app/[locale]/App';
 import { useTranslate } from '@tolgee/react';
 
 interface CountryInterface {
@@ -167,7 +68,6 @@ const Quiz: React.FC<QuizInterface> = ({
             capital={option.capital}
             handleAnswer={checkAnswer}
             disableGuess={disableGuess}
-            className="p-4 bg-gray-700 text-left hover:bg-purple-600 text-white rounded-lg transition duration-200"
           />
         ))}
       </div>

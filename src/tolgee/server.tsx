@@ -5,7 +5,7 @@ import { createServerInstance } from '@tolgee/react/server';
 
 export const { getTolgee, getTranslate, T } = createServerInstance({
   getLocale: getLocale,
-  createTolgee: async (locale) =>
+  createTolgee: async (locale: string | undefined) =>
     TolgeeBase().init({
       // including all locales
       // on server we are not concerned about bundle size

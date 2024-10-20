@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import Result from '../components/Result';
+import Result from '@/components/Result';
 
 const setupCountries = () => {}; // Fake function for testing
 
